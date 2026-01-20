@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explainly</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="app">
+  <h1 id="title">Explainly</h1>
+  <p id="desc">Understand any content easily.</p>
+
+  <textarea id="input" placeholder="Paste any text here..."></textarea>
+
+  <button onclick="explain()" id="btn">Explain</button>
+
+  <div class="result">
+    <h3 id="simpleTitle">Simplified</h3>
+    <p id="simpleText">—</p>
+
+    <h3 id="summaryTitle">Summary</h3>
+    <p id="summaryText">—</p>
+
+    <h3 id="pointsTitle">Key Points</h3>
+    <ul id="points"></ul>
+
+    <button onclick="copyAll()" id="copyBtn">Copy</button>
+  </div>
+
+  <div class="lang">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('zh')">中文</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
