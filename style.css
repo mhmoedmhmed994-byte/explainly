@@ -1,116 +1,149 @@
-/* ====== 3D Card Style ====== */
-body {
+:root{
+  --bg1: #0b1020;
+  --bg2: #0f172a;
+  --card: rgba(255,255,255,0.07);
+  --text: #e5e7eb;
+  --accent: #60a5fa;
+  --accent2: #fbbf24;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background: radial-gradient(circle at 20% 20%, #2b2b2b, #0b0b0b);
-  color: #fff;
-}
-
-.app {
-  width: 92%;
-  max-width: 420px;
-  background: linear-gradient(145deg, #1a1a1a, #121212);
-  border-radius: 25px;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: var(--text);
+  min-height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   padding: 20px;
-  box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
-  transform: perspective(1000px) rotateX(8deg);
 }
 
-h1 {
+.app{
+  width: 100%;
+  max-width: 900px;
+  background: var(--card);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+}
+
+#title{
   margin: 0;
-  font-size: 28px;
-  text-align: center;
+  font-size: 36px;
+  text-align:center;
 }
 
-p {
-  text-align: center;
-  margin-top: 6px;
-  opacity: 0.8;
+#desc{
+  text-align:center;
+  margin-top: 8px;
+  color: #cbd5e1;
 }
 
-textarea {
+textarea{
   width: 100%;
-  height: 130px;
+  height: 140px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: none;
   padding: 15px;
-  margin-top: 15px;
-  border-radius: 18px;
-  border: none;
-  outline: none;
-  background: rgba(255, 255, 255, 0.05);
+  font-size: 16px;
+  background: rgba(255,255,255,0.08);
   color: #fff;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-  backdrop-filter: blur(6px);
-  resize: none;
+  outline: none;
 }
 
-button {
+#btn, #copyBtn, .lang button, #contactBtn{
   width: 100%;
   padding: 12px;
-  margin-top: 12px;
-  border: none;
-  border-radius: 18px;
+  margin-top: 15px;
+  border:none;
+  border-radius: 15px;
   font-size: 16px;
-  cursor: pointer;
-  color: #fff;
-  background: linear-gradient(145deg, #0a8cff, #2af598);
-  box-shadow:
-    0 10px 20px rgba(0,0,0,0.4),
-    0 0 0 1px rgba(255,255,255,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor:pointer;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 25px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(255,255,255,0.12);
+#copyBtn{
+  background: linear-gradient(135deg, #34d399, #10b981);
 }
 
-.result {
-  margin-top: 15px;
-  background: rgba(255,255,255,0.04);
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-}
-
-.result h3 {
-  margin: 10px 0 6px 0;
-}
-
-.lang {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-}
-
-.lang button {
-  width: 32%;
-  background: rgba(255,255,255,0.08);
-}
-
-#contactOptions {
-  margin-top: 10px;
+.result{
+  margin-top: 20px;
   background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.result h3{
+  margin: 10px 0 5px 0;
+}
+
+.result p{
+  margin: 0;
+  color: #e5e7eb;
+}
+
+#points{
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lang{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.lang button{
+  width: 33%;
+}
+
+#contactOptions{
+  margin-top: 10px;
+  background: rgba(255,255,255,0.05);
   padding: 10px;
   border-radius: 12px;
 }
 
-#contactOptions a {
+#contactOptions a{
   color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  text-decoration:none;
 }
 
-#contactOptions a:last-child {
-  border-bottom: none;
+/* Responsive for tablets and desktop */
+@media (min-width: 768px){
+  textarea{
+    height: 200px;
+  }
+  #title{
+    font-size: 42px;
+  }
+  .lang button, #btn, #copyBtn, #contactBtn{
+    width: 48%;
+  }
+  .lang{
+    flex-wrap: wrap;
+  }
 }
 
+/* Responsive for big desktop */
+@media (min-width: 1024px){
+  .app{
+    padding: 35px;
+  }
+  textarea{
+    height: 240px;
+  }
+  #title{
+    font-size: 48px;
+  }
+}
