@@ -1,91 +1,66 @@
-let currentLang = "en";
-
-const translations = {
-  en: {
-    title: "Explainly",
-    desc: "Understand any content easily.",
-    explainBtn: "Explain",
-    simplified: "Simplified",
-    summary: "Summary",
-    keyPoints: "Key Points",
-    copyBtn: "Copy",
-    contactBtn: "Contact"
-  },
-  ar: {
-    title: "إكسبلينلي",
-    desc: "افهم أي محتوى بسهولة.",
-    explainBtn: "اشرح",
-    simplified: "مبسط",
-    summary: "ملخص",
-    keyPoints: "أهم النقاط",
-    copyBtn: "نسخ",
-    contactBtn: "تواصل"
-  },
-  zh: {
-    title: "解释者",
-    desc: "轻松理解任何内容。",
-    explainBtn: "解释",
-    simplified: "简化",
-    summary: "总结",
-    keyPoints: "要点",
-    copyBtn: "复制",
-    contactBtn: "联系"
-  }
+const messages = {
+  en: [
+    "Start your day with a smile — everything becomes easier.",
+    "Don’t wait for opportunity, create it.",
+    "Every small step brings you closer to your goal.",
+    "You are stronger than you think, just keep going.",
+    "Make today better than yesterday, even by 1%.",
+    "Failure is not the end, it's a new beginning.",
+    "Focus on what you can change and leave the rest.",
+    "Success needs patience, not time — just consistency.",
+    "Daily effort is the secret to progress.",
+    "You deserve the best, so work on yourself."
+  ],
+  ar: [
+    "ابدأ يومك بابتسامة واحدة، وستجد أن كل شيء يصبح أسهل.",
+    "لا تنتظر الفرصة، اصنعها.",
+    "كل خطوة صغيرة تقربك من هدفك.",
+    "أنت أقوى مما تظن، فقط استمر.",
+    "اجعل اليوم أفضل من الأمس، ولو بنسبة 1%.",
+    "الفشل ليس النهاية، بل بداية جديدة.",
+    "ركز على ما تستطيع تغييره، واترك الباقي.",
+    "النجاح يحتاج صبر، ليس وقت طويل بل استمرارية.",
+    "العمل اليومي هو سر التقدم.",
+    "أنت تستحق الأفضل، فاعمل على نفسك."
+  ],
+  zh: [
+    "以微笑开始你的一天——一切都会变得更容易。",
+    "不要等待机会，创造机会。",
+    "每一个小步骤都能让你更接近目标。",
+    "你比自己想象的更强大，坚持下去。",
+    "让今天比昨天更好，即使只有1%。",
+    "失败不是结束，而是新的开始。",
+    "专注于你能改变的，放下无法改变的。",
+    "成功需要耐心，不是时间，而是持续性。",
+    "每天的努力是进步的秘诀。",
+    "你值得拥有最好的，所以提升自己。"
+  ]
 };
 
-function setLang(lang) {
+let currentLang = "ar";
+let currentIndex = 0;
+
+function setLang(lang){
   currentLang = lang;
-
-  document.getElementById("title").innerText = translations[lang].title;
-  document.getElementById("desc").innerText = translations[lang].desc;
-  document.getElementById("btn").innerText = translations[lang].explainBtn;
-  document.getElementById("simpleTitle").innerText = translations[lang].simplified;
-  document.getElementById("summaryTitle").innerText = translations[lang].summary;
-  document.getElementById("pointsTitle").innerText = translations[lang].keyPoints;
-  document.getElementById("copyBtn").innerText = translations[lang].copyBtn;
-  document.getElementById("contactBtn").innerText = translations[lang].contactBtn;
+  document.getElementById("message").innerText = messages[lang][0];
 }
 
-function explain() {
-  const text = document.getElementById("input").value.trim();
-  if (!text) return;
-
-  // مثال مبسط بدل API
-  document.getElementById("simpleText").innerText = text.slice(0, 100) + "...";
-  document.getElementById("summaryText").innerText = text.slice(0, 200) + "...";
-
-  const points = text.split(".").filter(p => p.trim().length > 0).slice(0, 5);
-  const pointsList = document.getElementById("points");
-  pointsList.innerHTML = "";
-  points.forEach(p => {
-    const li = document.createElement("li");
-    li.innerText = p.trim();
-    pointsList.appendChild(li);
-  });
+function newMessage(){
+  currentIndex = Math.floor(Math.random() * messages[currentLang].length);
+  document.getElementById("message").innerText = messages[currentLang][currentIndex];
 }
 
-function copyAll() {
-  const text = `
-${document.getElementById("simpleTitle").innerText}:
-${document.getElementById("simpleText").innerText}
-
-${document.getElementById("summaryTitle").innerText}:
-${document.getElementById("summaryText").innerText}
-
-${document.getElementById("pointsTitle").innerText}:
-${Array.from(document.getElementById("points").children).map(li => "- " + li.innerText).join("\n")}
-`;
-  navigator.clipboard.writeText(text);
+function nextMessage(){
+  currentIndex = (currentIndex + 1) % messages[currentLang].length;
+  document.getElementById("message").innerText = messages[currentLang][currentIndex];
 }
 
-// Contact button toggle
-const contactBtn = document.getElementById("contactBtn");
-const contactOptions = document.getElementById("contactOptions");
+function copyMessage(){
+  const msg = document.getElementById("message").innerText;
+  navigator.clipboard.writeText(msg);
+  alert("تم النسخ ✅");
+}
 
-contactBtn.addEventListener("click", () => {
-  if (contactOptions.style.display === "none") {
-    contactOptions.style.display = "block";
-  } else {
-    contactOptions.style.display = "none";
-  }
-});
+// خلي أول رسالة تظهر عربي
+document.getElementById("message").innerText = messages.ar[0];
+
