@@ -38,20 +38,32 @@ const messages = {
 };
 
 let currentLang = "ar";
-let currentIndex = 0;
+let currentIndex = -1;
+
+function getRandomIndex(lang) {
+  const len = messages[lang].length;
+  let rand = Math.floor(Math.random() * len);
+
+  // لو نفس الرسالة السابقة، اختار غيرها
+  while (rand === currentIndex && len > 1) {
+    rand = Math.floor(Math.random() * len);
+  }
+  return rand;
+}
 
 function setLang(lang){
   currentLang = lang;
-  document.getElementById("message").innerText = messages[lang][0];
+  currentIndex = -1;
+  document.getElementById("message").innerText = "اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.";
 }
 
 function newMessage(){
-  currentIndex = Math.floor(Math.random() * messages[currentLang].length);
+  currentIndex = getRandomIndex(currentLang);
   document.getElementById("message").innerText = messages[currentLang][currentIndex];
 }
 
 function nextMessage(){
-  currentIndex = (currentIndex + 1) % messages[currentLang].length;
+  currentIndex = getRandomIndex(currentLang);
   document.getElementById("message").innerText = messages[currentLang][currentIndex];
 }
 
@@ -60,7 +72,3 @@ function copyMessage(){
   navigator.clipboard.writeText(msg);
   alert("تم النسخ ✅");
 }
-
-// خلي أول رسالة تظهر عربي
-document.getElementById("message").innerText = messages.ar[0];
-
