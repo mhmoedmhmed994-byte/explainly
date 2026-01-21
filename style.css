@@ -1,68 +1,116 @@
+/* ====== 3D Card Style ====== */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f7ff;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #2b2b2b, #0b0b0b);
+  color: #fff;
 }
 
 .app {
-  background: white;
-  width: 100%;
-  max-width: 500px;
+  width: 92%;
+  max-width: 420px;
+  background: linear-gradient(145deg, #1a1a1a, #121212);
+  border-radius: 25px;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: perspective(1000px) rotateX(8deg);
 }
 
 h1 {
-  color: #2563eb;
-  margin-bottom: 5px;
+  margin: 0;
+  font-size: 28px;
+  text-align: center;
 }
 
 p {
-  color: #555;
+  text-align: center;
+  margin-top: 6px;
+  opacity: 0.8;
 }
 
 textarea {
   width: 100%;
-  height: 140px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  margin: 10px 0;
+  height: 130px;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  resize: none;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  background: #2563eb;
-  color: white;
+  margin-top: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 18px;
   font-size: 16px;
   cursor: pointer;
+  color: #fff;
+  background: linear-gradient(145deg, #0a8cff, #2af598);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 25px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(255,255,255,0.12);
 }
 
 .result {
   margin-top: 15px;
-  background: #f8fbff;
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
   padding: 12px;
-  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.result h3 {
+  margin: 10px 0 6px 0;
 }
 
 .lang {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
   margin-top: 15px;
 }
 
 .lang button {
-  width: auto;
-  padding: 6px 12px;
-  background: #e5edff;
-  color: #2563eb;
+  width: 32%;
+  background: rgba(255,255,255,0.08);
 }
+
+#contactOptions {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+#contactOptions a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#contactOptions a:last-child {
+  border-bottom: none;
+}
+
