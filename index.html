@@ -12,15 +12,17 @@
 
 <div class="app">
   <h1 id="title">DailySpark</h1>
-  <p id="desc">رسالة يومية قصيرة تساعدك تبدأ يومك بشكل أفضل.</p>
+  <p id="desc">Daily motivational message to start your day.</p>
 
   <div class="message-box">
     <p id="message">اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.</p>
   </div>
 
-  <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
-  <button onclick="nextMessage()" id="nextBtn">التالي</button>
-  <button onclick="copyMessage()" id="copyBtn">نسخ</button>
+  <div class="buttons">
+    <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
+    <button onclick="nextMessage()" id="btn2">التالي</button>
+    <button onclick="copyMessage()" id="copyBtn">نسخ</button>
+  </div>
 
   <div class="lang">
     <button onclick="setLang('en')">EN</button>
@@ -29,7 +31,7 @@
   </div>
 
   <!-- زر التواصل -->
-  <button id="contactBtn">Contact</button>
+  <button id="contactBtn" onclick="toggleContact()">Contact</button>
 
   <!-- اختيارات التواصل -->
   <div id="contactOptions" style="display:none;">
