@@ -1,149 +1,64 @@
-:root{
-  --bg1: #0b1020;
-  --bg2: #0f172a;
-  --card: rgba(255,255,255,0.07);
-  --text: #e5e7eb;
-  --accent: #60a5fa;
-  --accent2: #fbbf24;
-}
-
-*{
-  box-sizing: border-box;
-}
-
 body{
   margin:0;
+  padding:0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, var(--bg1), var(--bg2));
-  color: var(--text);
-  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color:#fff;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding: 20px;
+  height:100vh;
 }
 
 .app{
-  width: 100%;
-  max-width: 900px;
-  background: var(--card);
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-}
-
-#title{
-  margin: 0;
-  font-size: 36px;
+  width:90%;
+  max-width:600px;
   text-align:center;
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:20px;
+  padding:30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-#desc{
-  text-align:center;
-  margin-top: 8px;
-  color: #cbd5e1;
-}
-
-textarea{
-  width: 100%;
-  height: 140px;
-  margin-top: 20px;
-  border-radius: 15px;
-  border: none;
-  padding: 15px;
-  font-size: 16px;
+.message-box{
   background: rgba(255,255,255,0.08);
-  color: #fff;
-  outline: none;
+  border:1px solid rgba(255,255,255,0.2);
+  padding:20px;
+  border-radius:15px;
+  margin:20px 0;
+  min-height:120px;
 }
 
-#btn, #copyBtn, .lang button, #contactBtn{
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
+.buttons button{
+  margin:10px 5px;
+  padding:12px 18px;
   border:none;
-  border-radius: 15px;
-  font-size: 16px;
+  border-radius:12px;
   cursor:pointer;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  font-size:16px;
+  background: #0ea5e9;
   color:#fff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#btn2{
+  background:#22c55e;
 }
 
 #copyBtn{
-  background: linear-gradient(135deg, #34d399, #10b981);
-}
-
-.result{
-  margin-top: 20px;
-  background: rgba(255,255,255,0.06);
-  padding: 15px;
-  border-radius: 15px;
-}
-
-.result h3{
-  margin: 10px 0 5px 0;
-}
-
-.result p{
-  margin: 0;
-  color: #e5e7eb;
-}
-
-#points{
-  margin: 0;
-  padding-left: 20px;
+  background:#f59e0b;
 }
 
 .lang{
-  display:flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 15px;
+  margin-top:20px;
 }
 
 .lang button{
-  width: 33%;
-}
-
-#contactOptions{
-  margin-top: 10px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 12px;
-}
-
-#contactOptions a{
-  color: #fff;
-  text-decoration:none;
-}
-
-/* Responsive for tablets and desktop */
-@media (min-width: 768px){
-  textarea{
-    height: 200px;
-  }
-  #title{
-    font-size: 42px;
-  }
-  .lang button, #btn, #copyBtn, #contactBtn{
-    width: 48%;
-  }
-  .lang{
-    flex-wrap: wrap;
-  }
-}
-
-/* Responsive for big desktop */
-@media (min-width: 1024px){
-  .app{
-    padding: 35px;
-  }
-  textarea{
-    height: 240px;
-  }
-  #title{
-    font-size: 48px;
-  }
+  margin:0 5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:#111827;
+  color:#fff;
 }
