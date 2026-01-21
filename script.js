@@ -44,7 +44,6 @@ function getRandomIndex(lang) {
   const len = messages[lang].length;
   let rand = Math.floor(Math.random() * len);
 
-  // لو نفس الرسالة السابقة، اختار غيرها
   while (rand === currentIndex && len > 1) {
     rand = Math.floor(Math.random() * len);
   }
@@ -54,7 +53,14 @@ function getRandomIndex(lang) {
 function setLang(lang){
   currentLang = lang;
   currentIndex = -1;
-  document.getElementById("message").innerText = "اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.";
+
+  const defaultText = {
+    ar: "اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.",
+    en: "Press “Daily Message” to get a new message.",
+    zh: "点击“每日消息”获取新消息。"
+  };
+
+  document.getElementById("message").innerText = defaultText[lang];
 }
 
 function newMessage(){
@@ -71,4 +77,9 @@ function copyMessage(){
   const msg = document.getElementById("message").innerText;
   navigator.clipboard.writeText(msg);
   alert("تم النسخ ✅");
+}
+
+function toggleContact() {
+  const box = document.getElementById("contactOptions");
+  box.style.display = (box.style.display === "none") ? "flex" : "none";
 }
