@@ -1,28 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daily Reminder</title>
+  <title>DailySpark</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
+
 <div class="app">
-  <h1 id="title">Daily Reminder</h1>
+  <h1 id="title">DailySpark</h1>
   <p id="desc">رسالة يومية قصيرة تساعدك تبدأ يومك بشكل أفضل.</p>
 
   <div class="message-box">
     <p id="message">اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.</p>
   </div>
 
-  <div class="buttons">
-    <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
-    <button onclick="nextMessage()" id="btn2">التالي</button>
-    <button onclick="copyMessage()" id="copyBtn">نسخ</button>
-  </div>
+  <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
+  <button onclick="nextMessage()" id="nextBtn">التالي</button>
+  <button onclick="copyMessage()" id="copyBtn">نسخ</button>
 
   <div class="lang">
     <button onclick="setLang('en')">EN</button>
@@ -45,6 +43,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
