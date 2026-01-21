@@ -1,64 +1,112 @@
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e293b);
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.app{
-  width:90%;
-  max-width:600px;
-  text-align:center;
-  background: rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:20px;
-  padding:30px;
+.app {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-.message-box{
+#title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#desc {
+  margin: 10px 0 20px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.message-box {
   background: rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.2);
-  padding:20px;
-  border-radius:15px;
-  margin:20px 0;
-  min-height:120px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttons button{
-  margin:10px 5px;
-  padding:12px 18px;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:16px;
-  background: #0ea5e9;
-  color:#fff;
+#message {
+  font-size: 18px;
+  line-height: 1.4;
 }
 
-#btn2{
-  background:#22c55e;
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  color: #fff;
+  font-weight: bold;
 }
 
-#copyBtn{
-  background:#f59e0b;
+#copyBtn {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
 }
 
-.lang{
-  margin-top:20px;
+.lang {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.lang button{
-  margin:0 5px;
-  padding:8px 12px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  background:#111827;
-  color:#fff;
+.lang button {
+  width: auto;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.1);
+}
+
+#contactBtn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+#contactOptions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#contactOptions a {
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .app {
+    max-width: 650px;
+  }
+
+  #title {
+    font-size: 38px;
+  }
+
+  #message {
+    font-size: 20px;
+  }
 }
