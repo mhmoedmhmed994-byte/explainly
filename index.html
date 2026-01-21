@@ -1,34 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Explainly</title>
+  <title>Daily Reminder</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
-
 <div class="app">
-  <h1 id="title">Explainly</h1>
-  <p id="desc">Understand any content easily.</p>
+  <h1 id="title">Daily Reminder</h1>
+  <p id="desc">رسالة يومية قصيرة تساعدك تبدأ يومك بشكل أفضل.</p>
 
-  <textarea id="input" placeholder="Paste any text here..."></textarea>
+  <div class="message-box">
+    <p id="message">اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.</p>
+  </div>
 
-  <button onclick="explain()" id="btn">Explain</button>
-
-  <div class="result">
-    <h3 id="simpleTitle">Simplified</h3>
-    <p id="simpleText">—</p>
-
-    <h3 id="summaryTitle">Summary</h3>
-    <p id="summaryText">—</p>
-
-    <h3 id="pointsTitle">Key Points</h3>
-    <ul id="points"></ul>
-
-    <button onclick="copyAll()" id="copyBtn">Copy</button>
+  <div class="buttons">
+    <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
+    <button onclick="nextMessage()" id="btn2">التالي</button>
+    <button onclick="copyMessage()" id="copyBtn">نسخ</button>
   </div>
 
   <div class="lang">
