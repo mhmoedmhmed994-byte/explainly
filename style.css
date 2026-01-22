@@ -1,55 +1,50 @@
 body {
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #0b1020);
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
 }
 
-.app {
-  width: 90%;
+.container {
   max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
   text-align: center;
-  padding: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-.card {
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  font-size: 18px;
-  line-height: 1.5;
+h1 {
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.message {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
 button {
-  margin: 10px 5px;
-  padding: 12px 20px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 16px;
-  background: linear-gradient(135deg, #0ea5e9, #a78bfa);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: #ff9800;
+  color: #000;
 }
 
-button:hover {
-  transform: translateY(-2px);
+.contact {
+  margin-top: 25px;
 }
 
-.lang button {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-#contactOptions {
-  margin-top: 15px;
+.contact a {
+  margin: 0 10px;
+  color: #ffcc80;
+  text-decoration: none;
 }
