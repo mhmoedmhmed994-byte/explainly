@@ -1,44 +1,25 @@
-const truths = [
-  "You are not lost. You are choosing comfort over growth.",
-  "You don’t need more motivation. You need more discipline.",
-  "Your fear is not protecting you. It’s controlling you.",
-  "You keep waiting for the right time. The right time is now.",
-  "You can’t change your life until you change your habits.",
-  "The pain you feel today is the strength you feel tomorrow."
+const messages = [
+  "Your future depends on what you do today.",
+  "Small progress every day beats motivation.",
+  "Discipline creates freedom.",
+  "You don’t need more time. You need focus.",
+  "What you repeat, you become.",
+  "Most people quit one step before success.",
+  "Comfort is expensive. Growth is priceless.",
+  "Your habits decide your income.",
+  "Silence, focus, execution.",
+  "Build quietly. Let results speak."
 ];
 
-let current = 0;
-let lang = "en";
+const today = new Date();
+const dayIndex = Math.floor(
+  (today - new Date("2024-01-01")) / (1000 * 60 * 60 * 24)
+);
 
-function revealTruth() {
-  document.getElementById("truthText").innerText = truths[current];
+const message = messages[dayIndex % messages.length];
+document.getElementById("message").innerText = message;
+
+function copyMessage() {
+  navigator.clipboard.writeText(message);
+  alert("Copied 🔥");
 }
-
-function nextTruth() {
-  current = Math.floor(Math.random() * truths.length);
-  revealTruth();
-}
-
-function copyText() {
-  const text = document.getElementById("truthText").innerText;
-  navigator.clipboard.writeText(text);
-}
-
-function setLang(l) {
-  lang = l;
-  if (lang === "en") {
-    document.getElementById("title").innerText = "TruthTap";
-    document.getElementById("desc").innerText = "One truth. One hit. Every day.";
-  } else if (lang === "ar") {
-    document.getElementById("title").innerText = "TruthTap";
-    document.getElementById("desc").innerText = "حقيقة واحدة. ضربة واحدة. كل يوم.";
-  } else if (lang === "zh") {
-    document.getElementById("title").innerText = "TruthTap";
-    document.getElementById("desc").innerText = "每天一个真相，一击即中。";
-  }
-}
-
-document.getElementById("contactBtn").addEventListener("click", () => {
-  const options = document.getElementById("contactOptions");
-  options.style.display = options.style.display === "none" ? "block" : "none";
-});
