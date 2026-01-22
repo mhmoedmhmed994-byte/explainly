@@ -5,34 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DailySpark</title>
 
-  <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
 
 <div class="app">
 
-  <h1 id="title">DailySpark ✨</h1>
+  <h1 id="title">DailySpark ⚡</h1>
   <p id="desc">A small message that can change your day.</p>
 
   <div class="message-box">
-    <p id="message" class="message">Click the button to get today’s spark 🔥</p>
+    <p class="message" id="message">Click the button to get today’s spark</p>
   </div>
 
-  <button id="generateBtn">Get Today’s Spark</button>
-  <button id="copyBtn">Copy</button>
+  <button id="generateBtn" onclick="generateMessage()">
+    Get Today’s Spark
+  </button>
+
+  <button id="copyBtn" onclick="copyMessage()">
+    Copy
+  </button>
 
   <div class="lang">
     <button onclick="setLang('en')">EN</button>
     <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('zh')">中文</button>
   </div>
 
-  <!-- زر التواصل -->
-  <button id="contactBtn">Contact</button>
+  <button id="contactBtn" onclick="toggleContact()">
+    Contact
+  </button>
 
-  <!-- اختيارات التواصل -->
-  <div id="contactOptions" class="contact">
+  <div class="contact" id="contact">
     <a href="mailto:mb2453504@gmail.com">📧 Email</a>
     <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
     <a href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
