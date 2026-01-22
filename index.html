@@ -2,44 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>DailySpark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TruthTap</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="container">
+    <h1>🔥 DailySpark</h1>
+    <p class="subtitle">One thought. Every day.</p>
 
-<div class="app">
-  <h1 id="title">TruthTap</h1>
-  <p id="desc">One truth. One hit. Every day.</p>
+    <div id="message" class="message">Loading...</div>
 
-  <div class="card">
-    <p id="truthText">Press the button to reveal today’s truth.</p>
+    <button onclick="copyMessage()">📋 Copy</button>
+
+    <div class="contact">
+      <a href="mailto:mb2453504@gmail.com">📧 Email</a>
+      <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
+      <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
+    </div>
   </div>
 
-  <button onclick="revealTruth()" id="btn">Reveal Truth</button>
-  <button onclick="copyText()" id="copyBtn">Copy</button>
-  <button onclick="nextTruth()" id="nextBtn">Next</button>
-
-  <div class="lang">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ar')">AR</button>
-    <button onclick="setLang('zh')">中文</button>
-  </div>
-
-  <!-- زر التواصل -->
-  <button id="contactBtn">Contact</button>
-
-  <!-- اختيارات التواصل -->
-  <div id="contactOptions" style="display:none;">
-    <a href="mailto:mb2453504@gmail.com">📧 Email</a><br>
-    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a><br>
-    <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
