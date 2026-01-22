@@ -3,48 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MoodFixer</title>
+  <title>DailySpark</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
-<div class="app">
-  <h1 id="title">MoodFixer</h1>
-  <p id="desc">Fix your mood in 60 seconds.</p>
+  <div class="app">
+    <header class="topbar">
+      <div class="logo">
+        <div class="logo3d">DS</div>
+        <div class="logotext">DailySpark</div>
+      </div>
+      <div class="topActions">
+        <button class="iconBtn" onclick="toggleLang()">🌐</button>
+        <button class="iconBtn" onclick="toggleContact()">✉️</button>
+      </div>
+    </header>
 
-  <div class="moods">
-    <button onclick="setMood('happy')">😄 Happy</button>
-    <button onclick="setMood('sad')">😔 Sad</button>
-    <button onclick="setMood('angry')">😡 Angry</button>
-    <button onclick="setMood('stressed')">😫 Stressed</button>
-    <button onclick="setMood('bored')">😐 Bored</button>
+    <main class="main">
+      <h1>DailySpark</h1>
+      <p>Get your daily boost in one click</p>
+
+      <button id="btn" onclick="generate()">Get Daily Spark</button>
+
+      <div class="result">
+        <p id="dailyText">Press the button to get your daily spark ✨</p>
+        <div class="resultActions">
+          <button id="copyBtn" onclick="copyText()">Copy</button>
+          <button id="nextBtn" onclick="generate()">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="lang" id="langBox">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ar')">AR</button>
+        <button onclick="setLang('zh')">中文</button>
+      </div>
+
+      <div class="contact" id="contactBox">
+        <a href="mailto:mb2453504@gmail.com">📧 Email</a>
+        <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
+      </div>
+    </footer>
   </div>
 
-  <button onclick="fixMood()" id="btn">Fix My Mood</button>
-
-  <div class="result">
-    <h3 id="resultTitle">Your Fix</h3>
-    <p id="resultText">—</p>
-    <button onclick="nextFix()" id="nextBtn">Next</button>
-    <button onclick="copyAll()" id="copyBtn">Copy</button>
-  </div>
-
-  <div class="lang">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ar')">AR</button>
-    <button onclick="setLang('zh')">中文</button>
-  </div>
-
-  <button id="contactBtn">Contact</button>
-
-  <div id="contactOptions" style="display:none;">
-    <a href="mailto:mb2453504@gmail.com">📧 Email</a><br>
-    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a><br>
-    <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
