@@ -1,85 +1,90 @@
 let lang = "en";
-let mood = "happy";
 
-const messages = {
+const texts = {
   en: {
-    happy: [
-      "Smile! Today is a new chance.",
-      "You are stronger than you think.",
-      "Small steps lead to big results."
-    ],
-    calm: [
-      "Take a deep breath and relax.",
-      "Peace comes from within.",
-      "Slow down and enjoy the moment."
-    ],
-    focus: [
-      "Do one task, do it well.",
-      "Start now, not later.",
-      "Focus on progress, not perfection."
-    ]
+    title: "EzyBrief",
+    desc: "Get a short summary, key points, and content ideas in seconds.",
+    btn: "Summarize",
+    summaryTitle: "Summary",
+    pointsTitle: "Key Points",
+    ideasTitle: "Content Ideas",
+    copyBtn: "Copy",
+    contact: "Contact"
   },
   ar: {
-    happy: [
-      "ابتسم! اليوم فرصة جديدة.",
-      "أنت أقوى مما تتخيل.",
-      "الخطوات الصغيرة تؤدي لنتائج كبيرة."
-    ],
-    calm: [
-      "تنفس بعمق واسترخِ.",
-      "السلام يبدأ من داخلك.",
-      "اهدأ واستمتع باللحظة."
-    ],
-    focus: [
-      "ابدأ بمهمة واحدة وأكملها.",
-      "ابدأ الآن، ليس لاحقًا.",
-      "التركيز على التقدم أفضل من الكمال."
-    ]
+    title: "EzyBrief",
+    desc: "احصل على ملخص سريع ونقاط رئيسية وأفكار محتوى في ثواني.",
+    btn: "لخص",
+    summaryTitle: "ملخص",
+    pointsTitle: "أهم النقاط",
+    ideasTitle: "أفكار محتوى",
+    copyBtn: "نسخ",
+    contact: "تواصل"
   },
   zh: {
-    happy: [
-      "微笑！今天是新的机会。",
-      "你比想象中更强大。",
-      "小步骤带来大结果。"
-    ],
-    calm: [
-      "深呼吸，放松一下。",
-      "平静来自内心。",
-      "慢下来，享受当下。"
-    ],
-    focus: [
-      "专注做一件事，做到最好。",
-      "现在开始，不要拖延。",
-      "专注于进步，而不是完美。"
-    ]
+    title: "EzyBrief",
+    desc: "在几秒钟内获得简短摘要、关键点和内容创意。",
+    btn: "总结",
+    summaryTitle: "摘要",
+    pointsTitle: "要点",
+    ideasTitle: "内容创意",
+    copyBtn: "复制",
+    contact: "联系"
   }
 };
 
 function setLang(l) {
   lang = l;
-  generate();
+  document.getElementById("title").innerText = texts[l].title;
+  document.getElementById("desc").innerText = texts[l].desc;
+  document.getElementById("btn").innerText = texts[l].btn;
+  document.getElementById("summaryTitle").innerText = texts[l].summaryTitle;
+  document.getElementById("pointsTitle").innerText = texts[l].pointsTitle;
+  document.getElementById("ideasTitle").innerText = texts[l].ideasTitle;
+  document.getElementById("copyBtn").innerText = texts[l].copyBtn;
+  document.getElementById("contactBtn").innerText = texts[l].contact;
 }
 
-function setMood(m) {
-  mood = m;
-  generate();
+function explain() {
+  const input = document.getElementById("input").value.trim();
+  if (!input) return;
+
+  // Summary
+  const summary = input.split(".").slice(0, 2).join(".") + ".";
+
+  // Key points
+  const points = input.split(".").slice(0, 4).map(s => s.trim()).filter(Boolean);
+
+  // Content ideas
+  const ideas = [
+    "Make a short video explaining the main point.",
+    "Create a quick checklist based on the text.",
+    "Write a tweet thread summarizing the key points."
+  ];
+
+  document.getElementById("summaryText").innerText = summary;
+  const pointsEl = document.getElementById("points");
+  pointsEl.innerHTML = "";
+  points.forEach(p => {
+    const li = document.createElement("li");
+    li.innerText = p;
+    pointsEl.appendChild(li);
+  });
+
+  const ideasEl = document.getElementById("ideas");
+  ideasEl.innerHTML = "";
+  ideas.forEach(i => {
+    const li = document.createElement("li");
+    li.innerText = i;
+    ideasEl.appendChild(li);
+  });
 }
 
-function generate() {
-  const list = messages[lang][mood];
-  const random = list[Math.floor(Math.random() * list.length)];
-  document.getElementById("dailyText").innerText = random;
-}
+function copyAll() {
+  const summary = document.getElementById("summaryText").innerText;
+  const points = Array.from(document.getElementById("points").children).map(li => "- " + li.innerText).join("\n");
+  const ideas = Array.from(document.getElementById("ideas").children).map(li => "- " + li.innerText).join("\n");
 
-function copyText() {
-  const text = document.getElementById("dailyText").innerText;
+  const text = `${summary}\n\nKey Points:\n${points}\n\nContent Ideas:\n${ideas}`;
   navigator.clipboard.writeText(text);
 }
-
-function toggleContact() {
-  const el = document.getElementById("contactOptions");
-  el.style.display = el.style.display === "none" ? "block" : "none";
-}
-
-// Start with a message
-generate();
