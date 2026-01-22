@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DailySpark</title>
+  <title>TruthTap</title>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
@@ -11,18 +11,16 @@
 <body>
 
 <div class="app">
-  <h1 id="title">DailySpark</h1>
-  <p id="desc">Daily motivational message to start your day.</p>
+  <h1 id="title">TruthTap</h1>
+  <p id="desc">One truth. One hit. Every day.</p>
 
-  <div class="message-box">
-    <p id="message">اضغط على “أطلع رسالة اليوم” لتحصل على رسالة جديدة.</p>
+  <div class="card">
+    <p id="truthText">Press the button to reveal today’s truth.</p>
   </div>
 
-  <div class="buttons">
-    <button onclick="newMessage()" id="btn">أطلع رسالة اليوم</button>
-    <button onclick="nextMessage()" id="btn2">التالي</button>
-    <button onclick="copyMessage()" id="copyBtn">نسخ</button>
-  </div>
+  <button onclick="revealTruth()" id="btn">Reveal Truth</button>
+  <button onclick="copyText()" id="copyBtn">Copy</button>
+  <button onclick="nextTruth()" id="nextBtn">Next</button>
 
   <div class="lang">
     <button onclick="setLang('en')">EN</button>
@@ -31,7 +29,7 @@
   </div>
 
   <!-- زر التواصل -->
-  <button id="contactBtn" onclick="toggleContact()">Contact</button>
+  <button id="contactBtn">Contact</button>
 
   <!-- اختيارات التواصل -->
   <div id="contactOptions" style="display:none;">
