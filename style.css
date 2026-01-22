@@ -1,109 +1,101 @@
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #1b2735, #090a0f);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0b0f1a, #1b2a5a);
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .app {
-  width: 90%;
-  max-width: 480px;
-  padding: 35px 25px;
-  border-radius: 24px;
-  background: linear-gradient(145deg, #121826, #0b0f1a);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+  width: 95%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 25px;
+  padding: 20px;
   text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
 }
 
+/* عنوان الموقع */
 h1 {
-  margin: 0 0 10px;
-  font-size: 34px;
-  background: linear-gradient(90deg, #ffd700, #ff9f00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 10px;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-#desc {
-  opacity: 0.8;
-  margin-bottom: 25px;
-}
-
-.message-box {
-  background: linear-gradient(145deg, #0f1624, #070b14);
-  border-radius: 18px;
-  padding: 22px;
+/* وصف الموقع */
+p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 20px;
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
 }
 
-.message {
-  font-size: 18px;
-  line-height: 1.6;
-  animation: fadeIn 0.4s ease;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 12px;
-  border: none;
-  border-radius: 14px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#generateBtn {
-  background: linear-gradient(135deg, #ffd700, #ff9f00);
-  color: #000;
-  font-weight: bold;
-}
-
-#copyBtn {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: #fff;
-}
-
-.lang {
+.moods {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.lang button {
-  background: #1a2236;
+.moods button,
+#btn,
+#nextBtn,
+#copyBtn,
+.lang button,
+#contactBtn {
+  cursor: pointer;
+  border: none;
+  padding: 12px 18px;
+  margin: 8px;
+  border-radius: 15px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.moods button {
+  background: rgba(255, 255, 255, 0.12);
   color: #fff;
 }
 
-#contactBtn {
-  background: linear-gradient(135deg, #2af598, #009efd);
+#btn {
+  background: linear-gradient(135deg, #1bff9a, #00c3ff);
   color: #000;
-  font-weight: bold;
-}
-
-.contact {
-  display: none;
+  width: clamp(220px, 80%, 500px);
   margin-top: 15px;
 }
 
-.contact a {
-  display: block;
-  margin: 8px 0;
-  color: #ffd700;
-  text-decoration: none;
+.result {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 15px;
 }
 
-button:active {
-  transform: scale(0.96);
+.result p {
+  margin: 10px 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
+.lang button {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#contactBtn {
+  background: rgba(255, 255, 255, 0.12);
+  width: clamp(180px, 50%, 350px);
+  margin-top: 15px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45);
 }
