@@ -2,28 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DailySpark</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" href="favicon.png">
+  <title>DailySpark</title>
+
+  <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1>🔥 DailySpark</h1>
-    <p class="subtitle">One thought. Every day.</p>
 
-    <div id="message" class="message">Loading...</div>
+<div class="app">
 
-    <button onclick="copyMessage()">📋 Copy</button>
+  <h1 id="title">DailySpark ✨</h1>
+  <p id="desc">A small message that can change your day.</p>
 
-    <div class="contact">
-      <a href="mailto:mb2453504@gmail.com">📧 Email</a>
-      <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
-      <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
-    </div>
+  <div class="message-box">
+    <p id="message" class="message">Click the button to get today’s spark 🔥</p>
   </div>
 
-  <script src="script.js"></script>
+  <button id="generateBtn">Get Today’s Spark</button>
+  <button id="copyBtn">Copy</button>
+
+  <div class="lang">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ar')">AR</button>
+  </div>
+
+  <!-- زر التواصل -->
+  <button id="contactBtn">Contact</button>
+
+  <!-- اختيارات التواصل -->
+  <div id="contactOptions" class="contact">
+    <a href="mailto:mb2453504@gmail.com">📧 Email</a>
+    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
