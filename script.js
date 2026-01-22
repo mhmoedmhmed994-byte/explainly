@@ -1,49 +1,69 @@
+let currentLang = "en";
+
 const messages = {
   en: [
-    "Start before you feel ready.",
-    "Small steps every day win.",
-    "Your future needs your focus today.",
+    "Small steps every day lead to big results.",
+    "Focus on progress, not perfection.",
     "Discipline beats motivation.",
-    "Progress, not perfection."
+    "Your future is built today.",
+    "Consistency is power."
   ],
   ar: [
-    "ابدأ قبل ما تكون جاهز.",
-    "الخطوات الصغيرة اليومية تصنع الفرق.",
-    "مستقبلك محتاج تركيزك النهارده.",
-    "الانضباط أقوى من الحماس.",
-    "التقدم أهم من الكمال."
+    "خطوة صغيرة كل يوم تصنع فرقًا كبيرًا.",
+    "الاستمرارية أهم من الحماس.",
+    "مستقبلك بيتبني دلوقتي.",
+    "التركيز قوة.",
+    "النجاح محتاج صبر."
+  ],
+  zh: [
+    "每天进步一点点。",
+    "专注胜过动力。",
+    "坚持就是力量。",
+    "未来由今天决定。",
+    "简单但持续。"
   ]
 };
 
-let currentLang = "en";
-
-const messageEl = document.getElementById("message");
-const generateBtn = document.getElementById("generateBtn");
-const copyBtn = document.getElementById("copyBtn");
-const contactBtn = document.getElementById("contactBtn");
-const contactOptions = document.getElementById("contactOptions");
-
-generateBtn.onclick = () => {
-  const list = messages[currentLang];
-  const random = list[Math.floor(Math.random() * list.length)];
-  messageEl.textContent = random;
-
-  messageEl.classList.remove("message");
-  void messageEl.offsetWidth;
-  messageEl.classList.add("message");
+const rareMessages = {
+  en: [
+    "🔥 RARE 🔥\nIf you stay consistent for one year, your life will change completely."
+  ],
+  ar: [
+    "🔥 رسالة نادرة 🔥\nالالتزام لمدة سنة واحدة كفيل يغير حياتك بالكامل."
+  ],
+  zh: [
+    "🔥 稀有信息 🔥\n坚持一年，你的人生将完全不同。"
+  ]
 };
 
-copyBtn.onclick = () => {
-  navigator.clipboard.writeText(messageEl.textContent);
-  copyBtn.textContent = "Copied ✔";
-  setTimeout(() => copyBtn.textContent = "Copy", 1500);
-};
+function generateMessage() {
+  const chance = Math.random();
+  let text = "";
 
-contactBtn.onclick = () => {
-  contactOptions.style.display =
-    contactOptions.style.display === "block" ? "none" : "block";
-};
+  if (chance < 0.01) {
+    text = rareMessages[currentLang][0];
+    document.getElementById("message").style.color = "#ffd700";
+  } else {
+    const list = messages[currentLang];
+    text = list[Math.floor(Math.random() * list.length)];
+    document.getElementById("message").style.color = "#ffffff";
+  }
+
+  document.getElementById("message").textContent = text;
+}
+
+function copyMessage() {
+  const text = document.getElementById("message").textContent;
+  navigator.clipboard.writeText(text);
+  alert("Copied!");
+}
 
 function setLang(lang) {
   currentLang = lang;
+  generateMessage();
+}
+
+function toggleContact() {
+  const box = document.getElementById("contact");
+  box.style.display = box.style.display === "block" ? "none" : "block";
 }
