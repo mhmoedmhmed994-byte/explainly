@@ -1,25 +1,49 @@
-const messages = [
-  "Your future depends on what you do today.",
-  "Small progress every day beats motivation.",
-  "Discipline creates freedom.",
-  "You don’t need more time. You need focus.",
-  "What you repeat, you become.",
-  "Most people quit one step before success.",
-  "Comfort is expensive. Growth is priceless.",
-  "Your habits decide your income.",
-  "Silence, focus, execution.",
-  "Build quietly. Let results speak."
-];
+const messages = {
+  en: [
+    "Start before you feel ready.",
+    "Small steps every day win.",
+    "Your future needs your focus today.",
+    "Discipline beats motivation.",
+    "Progress, not perfection."
+  ],
+  ar: [
+    "ابدأ قبل ما تكون جاهز.",
+    "الخطوات الصغيرة اليومية تصنع الفرق.",
+    "مستقبلك محتاج تركيزك النهارده.",
+    "الانضباط أقوى من الحماس.",
+    "التقدم أهم من الكمال."
+  ]
+};
 
-const today = new Date();
-const dayIndex = Math.floor(
-  (today - new Date("2024-01-01")) / (1000 * 60 * 60 * 24)
-);
+let currentLang = "en";
 
-const message = messages[dayIndex % messages.length];
-document.getElementById("message").innerText = message;
+const messageEl = document.getElementById("message");
+const generateBtn = document.getElementById("generateBtn");
+const copyBtn = document.getElementById("copyBtn");
+const contactBtn = document.getElementById("contactBtn");
+const contactOptions = document.getElementById("contactOptions");
 
-function copyMessage() {
-  navigator.clipboard.writeText(message);
-  alert("Copied 🔥");
+generateBtn.onclick = () => {
+  const list = messages[currentLang];
+  const random = list[Math.floor(Math.random() * list.length)];
+  messageEl.textContent = random;
+
+  messageEl.classList.remove("message");
+  void messageEl.offsetWidth;
+  messageEl.classList.add("message");
+};
+
+copyBtn.onclick = () => {
+  navigator.clipboard.writeText(messageEl.textContent);
+  copyBtn.textContent = "Copied ✔";
+  setTimeout(() => copyBtn.textContent = "Copy", 1500);
+};
+
+contactBtn.onclick = () => {
+  contactOptions.style.display =
+    contactOptions.style.display === "block" ? "none" : "block";
+};
+
+function setLang(lang) {
+  currentLang = lang;
 }
