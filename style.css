@@ -1,79 +1,90 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
   min-height: 100vh;
+  background: radial-gradient(circle at top, #1b2735, #090a0f);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
 }
 
 .app {
-  background: rgba(0,0,0,0.4);
-  padding: 30px;
-  border-radius: 20px;
   width: 90%;
-  max-width: 450px;
+  max-width: 480px;
+  padding: 35px 25px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #121826, #0b0f1a);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 h1 {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
+  font-size: 34px;
+  background: linear-gradient(90deg, #ffd700, #ff9f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #desc {
   opacity: 0.8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .message-box {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
+  background: linear-gradient(145deg, #0f1624, #070b14);
+  border-radius: 18px;
+  padding: 22px;
   margin-bottom: 20px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
 }
 
 .message {
-  animation: fadeSlide 0.6s ease;
+  font-size: 18px;
+  line-height: 1.6;
+  animation: fadeIn 0.4s ease;
 }
 
 button {
   width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+  padding: 14px;
+  margin-top: 12px;
   border: none;
-  border-radius: 12px;
-  cursor: pointer;
+  border-radius: 14px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 #generateBtn {
-  background: #ffd700;
+  background: linear-gradient(135deg, #ffd700, #ff9f00);
   color: #000;
   font-weight: bold;
 }
 
 #copyBtn {
-  background: #00c6ff;
-  color: white;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.lang {
+  display: flex;
+  gap: 10px;
 }
 
 .lang button {
-  width: 48%;
-  margin-top: 15px;
-  background: #333;
-  color: white;
+  background: #1a2236;
+  color: #fff;
 }
 
 #contactBtn {
-  background: #444;
-  margin-top: 20px;
+  background: linear-gradient(135deg, #2af598, #009efd);
+  color: #000;
+  font-weight: bold;
 }
 
 .contact {
@@ -83,8 +94,8 @@ button {
 
 .contact a {
   display: block;
-  color: #ffd700;
   margin: 8px 0;
+  color: #ffd700;
   text-decoration: none;
 }
 
@@ -92,13 +103,7 @@ button:active {
   transform: scale(0.96);
 }
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
