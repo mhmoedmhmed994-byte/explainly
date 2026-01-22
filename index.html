@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DailySpark</title>
-
-  <link rel="stylesheet" href="style.css">
+  <title>MoodFixer</title>
+  <link rel="stylesheet" href="style.css"/>
   <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
-
 <div class="app">
+  <h1 id="title">MoodFixer</h1>
+  <p id="desc">Fix your mood in 60 seconds.</p>
 
-  <h1 id="title">DailySpark ⚡</h1>
-  <p id="desc">A small message that can change your day.</p>
-
-  <div class="message-box">
-    <p class="message" id="message">Click the button to get today’s spark</p>
+  <div class="moods">
+    <button onclick="setMood('happy')">😄 Happy</button>
+    <button onclick="setMood('sad')">😔 Sad</button>
+    <button onclick="setMood('angry')">😡 Angry</button>
+    <button onclick="setMood('stressed')">😫 Stressed</button>
+    <button onclick="setMood('bored')">😐 Bored</button>
   </div>
 
-  <button id="generateBtn" onclick="generateMessage()">
-    Get Today’s Spark
-  </button>
+  <button onclick="fixMood()" id="btn">Fix My Mood</button>
 
-  <button id="copyBtn" onclick="copyMessage()">
-    Copy
-  </button>
+  <div class="result">
+    <h3 id="resultTitle">Your Fix</h3>
+    <p id="resultText">—</p>
+    <button onclick="nextFix()" id="nextBtn">Next</button>
+    <button onclick="copyAll()" id="copyBtn">Copy</button>
+  </div>
 
   <div class="lang">
     <button onclick="setLang('en')">EN</button>
@@ -34,16 +36,13 @@
     <button onclick="setLang('zh')">中文</button>
   </div>
 
-  <button id="contactBtn" onclick="toggleContact()">
-    Contact
-  </button>
+  <button id="contactBtn">Contact</button>
 
-  <div class="contact" id="contact">
-    <a href="mailto:mb2453504@gmail.com">📧 Email</a>
-    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
-    <a href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
+  <div id="contactOptions" style="display:none;">
+    <a href="mailto:mb2453504@gmail.com">📧 Email</a><br>
+    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a><br>
+    <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
   </div>
-
 </div>
 
 <script src="script.js"></script>
