@@ -1,12 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0b0f1a, #1b2a5a);
+  background: linear-gradient(135deg, #0b1020, #1f2a47);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -15,91 +10,98 @@ body {
 }
 
 .app {
-  width: 95%;
-  max-width: 900px;
-  background: rgba(255, 255, 255, 0.08);
+  width: 90%;
+  max-width: 800px;
+  background: rgba(255,255,255,0.05);
   border-radius: 25px;
   padding: 20px;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 10px;
-  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
 p {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #cbd5e1;
 }
 
-.card {
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding: 15px;
-}
-
-.mood {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.moodBtn,
-#btn,
-#nextBtn,
-#copyBtn,
-.lang button,
-#contactBtn {
-  cursor: pointer;
-  border: none;
-  padding: 12px 18px;
-  margin: 8px;
+textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
   border-radius: 15px;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-weight: bold;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.moodBtn {
-  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  padding: 15px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255,255,255,0.08);
   color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
 }
 
-#btn {
-  background: linear-gradient(135deg, #1bff9a, #00c3ff);
-  color: #000;
-  width: clamp(220px, 80%, 500px);
-}
-
-.result p {
-  margin: 10px 0;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+button {
   margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #3b82f6, #a78bfa);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.result {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.result h3 {
+  margin: 10px 0 5px 0;
+}
+
+.result p, .result ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
 .lang {
   margin-top: 15px;
 }
 
-#contactBtn {
-  background: rgba(255, 255, 255, 0.12);
-  width: clamp(180px, 50%, 350px);
-  margin-top: 15px;
+.lang button {
+  margin: 5px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.45);
+#contactBtn {
+  margin-top: 15px;
+  background: rgba(255,255,255,0.08);
+}
+
+#contactOptions {
+  margin-top: 10px;
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
 }
