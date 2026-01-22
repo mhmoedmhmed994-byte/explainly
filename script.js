@@ -1,37 +1,72 @@
 let lang = "en";
+let mood = "happy";
 
-const texts = {
-  en: [
-    "Your daily boost: drink water now 💧",
-    "Reminder: take a 5-minute walk 🚶",
-    "Motivation: you can do it 💪",
-    "Tip: write 1 task and finish it ✍️",
-    "Daily spark: smile at someone 😊",
-    "Energy: stand up and stretch 🧘",
-    "Focus: do the hardest task first 🔥",
-  ],
-  ar: [
-    "تذكير يومي: اشرب مياه الآن 💧",
-    "نصيحة: امشي 5 دقائق 🚶",
-    "تحفيز: أنت قادر 💪",
-    "نصيحة: اكتب مهمة واحدة وخلصها ✍️",
-    "شرارة اليوم: ابتسم لشخص 😊",
-    "طاقة: قم وتمدد 🧘",
-    "تركيز: ابدأ بأصعب مهمة 🔥",
-  ],
-  zh: [
-    "每日提醒：现在喝水 💧",
-    "小建议：走5分钟 🚶",
-    "动力：你能做到 💪",
-    "技巧：写下1件事并完成 ✍️",
-    "今日火花：对别人微笑 😊",
-    "能量：站起来伸展 🧘",
-    "专注：先做最难的事 🔥",
-  ]
+const messages = {
+  en: {
+    happy: [
+      "Smile! Today is a new chance.",
+      "You are stronger than you think.",
+      "Small steps lead to big results."
+    ],
+    calm: [
+      "Take a deep breath and relax.",
+      "Peace comes from within.",
+      "Slow down and enjoy the moment."
+    ],
+    focus: [
+      "Do one task, do it well.",
+      "Start now, not later.",
+      "Focus on progress, not perfection."
+    ]
+  },
+  ar: {
+    happy: [
+      "ابتسم! اليوم فرصة جديدة.",
+      "أنت أقوى مما تتخيل.",
+      "الخطوات الصغيرة تؤدي لنتائج كبيرة."
+    ],
+    calm: [
+      "تنفس بعمق واسترخِ.",
+      "السلام يبدأ من داخلك.",
+      "اهدأ واستمتع باللحظة."
+    ],
+    focus: [
+      "ابدأ بمهمة واحدة وأكملها.",
+      "ابدأ الآن، ليس لاحقًا.",
+      "التركيز على التقدم أفضل من الكمال."
+    ]
+  },
+  zh: {
+    happy: [
+      "微笑！今天是新的机会。",
+      "你比想象中更强大。",
+      "小步骤带来大结果。"
+    ],
+    calm: [
+      "深呼吸，放松一下。",
+      "平静来自内心。",
+      "慢下来，享受当下。"
+    ],
+    focus: [
+      "专注做一件事，做到最好。",
+      "现在开始，不要拖延。",
+      "专注于进步，而不是完美。"
+    ]
+  }
 };
 
+function setLang(l) {
+  lang = l;
+  generate();
+}
+
+function setMood(m) {
+  mood = m;
+  generate();
+}
+
 function generate() {
-  const list = texts[lang];
+  const list = messages[lang][mood];
   const random = list[Math.floor(Math.random() * list.length)];
   document.getElementById("dailyText").innerText = random;
 }
@@ -39,20 +74,12 @@ function generate() {
 function copyText() {
   const text = document.getElementById("dailyText").innerText;
   navigator.clipboard.writeText(text);
-  alert("Copied!");
-}
-
-function setLang(l) {
-  lang = l;
-  generate();
-}
-
-function toggleLang() {
-  const box = document.getElementById("langBox");
-  box.style.display = box.style.display === "flex" ? "none" : "flex";
 }
 
 function toggleContact() {
-  const box = document.getElementById("contactBox");
-  box.style.display = box.style.display === "flex" ? "none" : "flex";
+  const el = document.getElementById("contactOptions");
+  el.style.display = el.style.display === "none" ? "block" : "none";
 }
+
+// Start with a message
+generate();
