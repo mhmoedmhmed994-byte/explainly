@@ -1,57 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EzyBrief</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
 
 <div class="app">
   <h1 id="title">EzyBrief</h1>
-  <p id="desc">Get a short summary, key points, and content ideas in seconds.</p>
+  <p id="desc">حوّل أي نص إلى ملخص وأفكار محتوى في ثواني</p>
 
-  <!-- مكان الإعلان -->
-  <div class="ad">
-    <p>Ad Space</p>
-  </div>
+  <textarea id="input" placeholder="الصق النص هنا..."></textarea>
 
-  <textarea id="input" placeholder="Paste any text here..."></textarea>
-
-  <button onclick="explain()" id="btn">Summarize</button>
+  <button id="btn" onclick="explainText()">تحليل النص</button>
 
   <div class="result">
-    <h3 id="summaryTitle">Summary</h3>
-    <p id="summaryText">—</p>
+    <h3>الملخص</h3>
+    <p id="summary">—</p>
 
-    <h3 id="pointsTitle">Key Points</h3>
+    <h3>أهم النقاط</h3>
     <ul id="points"></ul>
-
-    <h3 id="ideasTitle">Content Ideas</h3>
-    <ul id="ideas"></ul>
-
-    <button onclick="copyAll()" id="copyBtn">Copy</button>
   </div>
 
-  <div class="lang">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('ar')">AR</button>
-    <button onclick="setLang('zh')">中文</button>
-  </div>
+  <button id="copyBtn" onclick="copyAll()">نسخ النتيجة</button>
 
-  <!-- زر التواصل -->
-  <button id="contactBtn">Contact</button>
+  <button id="contactBtn">تواصل</button>
 
-  <!-- اختيارات التواصل -->
-  <div id="contactOptions" style="display:none;">
-    <a href="mailto:mb2453504@gmail.com">📧 Email</a><br>
-    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a><br>
+  <div id="contactOptions">
+    <a href="mailto:mb2453504@gmail.com">📧 Email</a>
+    <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
     <a href="https://www.linkedin.com/public-profile/settings" target="_blank">💼 LinkedIn</a>
   </div>
-
 </div>
 
 <script src="script.js"></script>
