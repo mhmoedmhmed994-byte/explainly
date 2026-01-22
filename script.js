@@ -73,7 +73,7 @@ function explain() {
 
   const ideasEl = document.getElementById("ideas");
   ideasEl.innerHTML = "";
-  ideas.forEach(i => {
+  ideasEl.forEach(i => {
     const li = document.createElement("li");
     li.innerText = i;
     ideasEl.appendChild(li);
