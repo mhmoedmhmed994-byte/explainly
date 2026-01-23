@@ -2,189 +2,53 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EazyTask</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0b0f1a, #1a1f2d);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+  <title>EcoPet - مساعد الحيوانات الذكي</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      width: 95%;
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 15px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
-    }
-
-    select {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-    }
-
-    button {
-      background: #4caf50;
-      cursor: pointer;
-      color: #fff;
-    }
-
-    .task {
-      margin-top: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 15px;
-      text-align: left;
-    }
-
-    .task h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .task p {
-      margin: 10px 0 0;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .btn-row button {
-      flex: 1;
-    }
-
-    .contact {
-      margin-top: 15px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 15px;
-    }
-
-    .contact a {
-      color: #fff;
-      text-decoration: none;
-      display: block;
-      margin: 5px 0;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
-      .container {
-        padding: 15px;
-      }
-    }
-  </style>
+  <!-- Google AdSense (مكانه هنا) -->
+  <!-- حط كود الإعلانات بتاعك بدل COMMENT -->
 </head>
 <body>
 
-  <div class="container">
-    <h1>EazyTask</h1>
+<header>
+  <h1>🐾 EcoPet</h1>
+  <p>مساعد ذكي لصحة الحيوانات والطيور</p>
+</header>
 
-    <select id="goal">
-      <option value="productivity">الإنتاجية</option>
-      <option value="health">الصحة</option>
-      <option value="learning">التعلم</option>
-      <option value="self-development">تطوير الذات</option>
-      <option value="home">تنظيم البيت</option>
+<main>
+  <section class="card">
+    <label>اختر النوع</label>
+    <select id="animal">
+      <option value="كلب">كلب</option>
+      <option value="قطة">قطة</option>
+      <option value="طائر">طائر</option>
+      <option value="أرنب">أرنب</option>
+      <option value="حيوان مزرعة">حيوان مزرعة</option>
     </select>
 
-    <button onclick="getTask()">اكتب لي مهمة اليوم</button>
+    <label>العمر</label>
+    <input type="text" id="age" placeholder="مثال: 6 شهور">
 
-    <div class="task" id="taskBox" style="display:none;">
-      <h2>مهمتك اليوم:</h2>
-      <p id="taskText"></p>
-      <div class="btn-row">
-        <button onclick="copyTask()">نسخ</button>
-        <button onclick="getTask()">التالي</button>
-      </div>
-    </div>
+    <label>اكتب المشكلة</label>
+    <textarea id="problem" placeholder="مثال: فقدان شهية، كسل..."></textarea>
 
-    <div class="contact">
-      <h3>تواصل معانا:</h3>
-      <a href="mailto:example@gmail.com">📧 Email</a>
-      <a href="https://wa.me/0123456789" target="_blank">📱 WhatsApp</a>
-      <a href="https://www.linkedin.com/in/example" target="_blank">💼 LinkedIn</a>
-    </div>
+    <button onclick="analyze()">تحليل الحالة</button>
+  </section>
+
+  <section id="result" class="card hidden"></section>
+</main>
+
+<footer>
+  <p>© 2026 EcoPet</p>
+
+  <div class="contact">
+    <a href="https://wa.me/201234567890" target="_blank">📱 واتساب</a>
+    <a href="mailto:contact@ecopet.com">📧 إيميل</a>
+    <a href="https://linkedin.com" target="_blank">💼 لينكدإن</a>
   </div>
+</footer>
 
-  <script>
-    const tasks = {
-      productivity: [
-        "اكتب 3 أهداف قصيرة لليوم.",
-        "رتب مكتبك لمدة 5 دقائق فقط.",
-        "اعمل قائمة مهام بسيطة لليوم.",
-        "ابدأ بعمل واحد فقط بدون تشتت لمدة 10 دقائق."
-      ],
-      health: [
-        "امشي 5 دقائق.",
-        "اشرب كوب مياه الآن.",
-        "اعمل 10 تمارين تمدد.",
-        "اكل فاكهة واحدة."
-      ],
-      learning: [
-        "اقرأ صفحة واحدة من كتاب.",
-        "شاهد فيديو تعليمي 5 دقائق.",
-        "احفظ 5 كلمات جديدة.",
-        "اكتب ملخص صغير لشيء تعلمته اليوم."
-      ],
-      "self-development": [
-        "اكتب 3 أشياء أنت ممتن لها اليوم.",
-        "اكتب 1 هدف كبير وحط له خطوة صغيرة اليوم.",
-        "اعمل تنفس عميق 3 مرات.",
-        "اكتب رسالة لنفسك تحفيزية."
-      ],
-      home: [
-        "نضف 3 أشياء في غرفتك.",
-        "رتب السرير.",
-        "امسح سطح واحد في البيت.",
-        "رتب الملابس اللي على الأرض."
-      ]
-    };
-
-    function getTask() {
-      const goal = document.getElementById("goal").value;
-      const list = tasks[goal];
-      const random = list[Math.floor(Math.random() * list.length)];
-
-      document.getElementById("taskBox").style.display = "block";
-      document.getElementById("taskText").innerText = random;
-    }
-
-    function copyTask() {
-      const text = document.getElementById("taskText").innerText;
-      navigator.clipboard.writeText(text);
-      alert("تم النسخ ✅");
-    }
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
