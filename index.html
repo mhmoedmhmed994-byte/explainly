@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>EcoPet - مساعد الحيوانات الذكي</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>EcoPet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google AdSense (مكانه هنا) -->
-  <!-- حط كود الإعلانات بتاعك بدل COMMENT -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>🐾 EcoPet</h1>
-  <p>مساعد ذكي لصحة الحيوانات والطيور</p>
+  <img src="favicon.png" alt="EcoPet" class="logo">
+  <h1 id="title">EcoPet</h1>
+  <p id="subtitle">مساعد ذكي لصحة الحيوانات والطيور</p>
 </header>
 
 <main>
-  <section class="card">
-    <label>اختر النوع</label>
+  <div class="card">
+    <label id="label1">اختر النوع</label>
     <select id="animal">
       <option value="كلب">كلب</option>
       <option value="قطة">قطة</option>
@@ -27,21 +25,31 @@
       <option value="حيوان مزرعة">حيوان مزرعة</option>
     </select>
 
-    <label>العمر</label>
-    <input type="text" id="age" placeholder="مثال: 6 شهور">
+    <label id="label2">العمر</label>
+    <input id="age" placeholder="مثال: 6 شهور">
 
-    <label>اكتب المشكلة</label>
+    <label id="label3">اكتب المشكلة</label>
     <textarea id="problem" placeholder="مثال: فقدان شهية، كسل..."></textarea>
 
-    <button onclick="analyze()">تحليل الحالة</button>
-  </section>
+    <button onclick="analyze()" id="btnAnalyze">تحليل الحالة</button>
+  </div>
 
-  <section id="result" class="card hidden"></section>
+  <div id="result" class="card hidden"></div>
+
+  <!-- لغة -->
+  <div class="lang">
+    <select id="lang" onchange="changeLang()">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
 </main>
 
 <footer>
-  <p>© 2026 EcoPet</p>
+  <p id="footerText">© EcoPet</p>
 
+  <!-- زر التواصل -->
   <div class="contact">
     <a href="https://wa.me/201234567890" target="_blank">📱 واتساب</a>
     <a href="mailto:contact@ecopet.com">📧 إيميل</a>
