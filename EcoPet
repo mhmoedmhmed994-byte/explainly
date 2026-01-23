@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>EcoPet - مساعد الحيوانات الذكي</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google AdSense (مكانه هنا) -->
+  <!-- حط كود الإعلانات بتاعك بدل COMMENT -->
+</head>
+<body>
+
+<header>
+  <h1>🐾 EcoPet</h1>
+  <p>مساعد ذكي لصحة الحيوانات والطيور</p>
+</header>
+
+<main>
+  <section class="card">
+    <label>اختر النوع</label>
+    <select id="animal">
+      <option value="كلب">كلب</option>
+      <option value="قطة">قطة</option>
+      <option value="طائر">طائر</option>
+      <option value="أرنب">أرنب</option>
+      <option value="حيوان مزرعة">حيوان مزرعة</option>
+    </select>
+
+    <label>العمر</label>
+    <input type="text" id="age" placeholder="مثال: 6 شهور">
+
+    <label>اكتب المشكلة</label>
+    <textarea id="problem" placeholder="مثال: فقدان شهية، كسل..."></textarea>
+
+    <button onclick="analyze()">تحليل الحالة</button>
+  </section>
+
+  <section id="result" class="card hidden"></section>
+</main>
+
+<footer>
+  <p>© 2026 EcoPet</p>
+
+  <div class="contact">
+    <a href="https://wa.me/201234567890" target="_blank">📱 واتساب</a>
+    <a href="mailto:contact@ecopet.com">📧 إيميل</a>
+    <a href="https://linkedin.com" target="_blank">💼 لينكدإن</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
