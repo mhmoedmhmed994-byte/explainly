@@ -1,109 +1,72 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 body {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+  margin: 0;
+  background: #f4f6f8;
+  color: #333;
 }
 
-.app {
-  width: 100%;
-  min-height: 100vh;
-  max-width: 900px;
+header {
+  background: #0a7cff;
+  color: white;
   padding: 20px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-}
-
-h1 {
   text-align: center;
-  font-size: 2.3rem;
 }
 
-p {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #cbd5f5;
+main {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
 }
 
-textarea {
-  width: 100%;
-  height: 160px;
-  padding: 15px;
+.card {
+  background: white;
+  padding: 20px;
   border-radius: 12px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
 }
 
 button {
-  width: 100%;
-  padding: 14px;
   margin-top: 15px;
-  border-radius: 12px;
+  width: 100%;
+  padding: 12px;
+  background: #0a7cff;
+  color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
 }
 
-#btn {
-  background: #38bdf8;
-  color: #000;
+button:hover {
+  background: #055fd1;
 }
 
-.result {
-  margin-top: 20px;
-  background: rgba(255,255,255,0.08);
-  padding: 15px;
-  border-radius: 12px;
-}
-
-.result h3 {
-  margin-top: 10px;
-}
-
-.result ul {
-  margin-top: 5px;
-  padding-right: 20px;
-}
-
-#copyBtn {
-  background: #22c55e;
-  color: #000;
-}
-
-#contactBtn {
-  background: rgba(255,255,255,0.2);
-}
-
-#contactOptions {
+.hidden {
   display: none;
-  margin-top: 10px;
+}
+
+footer {
   text-align: center;
+  padding: 15px;
+  background: #eee;
 }
 
-#contactOptions a {
-  display: block;
-  color: #fff;
-  margin: 5px 0;
+.contact a {
+  margin: 0 8px;
   text-decoration: none;
-}
-
-@media (min-width: 768px) {
-  .app {
-    padding: 30px;
-  }
 }
