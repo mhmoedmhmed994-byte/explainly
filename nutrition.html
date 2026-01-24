@@ -1,23 +1,41 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Nutrition – PulseAI</title>
+<title>Nutrition | PulseAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <a href="index.html">PulseAI</a>
+  <div class="logo">PulseAI</div>
+
+  <nav>
+    <a href="index.html" data-key="home"></a>
+    <a href="symptoms.html" data-key="symptoms"></a>
+    <a href="nutrition.html" data-key="nutrition"></a>
+    <a href="fitness.html" data-key="fitness"></a>
+    <a href="favorites.html" data-key="favorites"></a>
+  </nav>
+
+  <div class="controls">
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('zh')">中</button>
+    <button onclick="toggleMode()">🌙</button>
+  </div>
 </header>
 
-<section>
-  <h1>خطة التغذية</h1>
-  <input placeholder="العمر">
-  <input placeholder="الوزن">
-  <br><br>
-  <button>إنشاء الخطة</button>
+<section class="card">
+  <h2>Nutrition Plan</h2>
+  <textarea id="nutInput" placeholder="Your nutrition goal..."></textarea>
+  <button class="primary" onclick="addToFavorites('Nutrition Plan', document.getElementById('nutInput').value)">⭐ Save</button>
 </section>
+
+<footer>
+  <p data-key="contact"></p>
+</footer>
 
 <script src="script.js"></script>
 </body>
