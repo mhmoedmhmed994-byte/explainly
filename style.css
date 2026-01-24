@@ -1,61 +1,47 @@
 :root{
-  --gold:#C9A24D;
-  --bg-light:#ffffff;
-  --bg-dark:#0d0d0d;
-  --text-light:#000;
-  --text-dark:#fff;
+  --gold:#d4af37;
+  --black:#0b0b0b;
+  --white:#ffffff;
 }
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg-light);
-  color:var(--text-light);
+  font-family:Arial;
+  background:var(--white);
+  color:var(--black);
 }
 
-body.dark{
-  background:var(--bg-dark);
-  color:var(--text-dark);
+.dark{
+  background:var(--black);
+  color:var(--white);
 }
 
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 30px;
+  padding:15px;
   border-bottom:2px solid var(--gold);
 }
 
 nav a{
   margin:0 10px;
-  text-decoration:none;
-  color:inherit;
-  font-weight:bold;
-}
-
-nav a:hover{
   color:var(--gold);
+  text-decoration:none;
+  font-weight:bold;
 }
 
 button{
-  background:var(--gold);
-  border:none;
-  padding:8px 15px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-section{
-  padding:60px 20px;
-  text-align:center;
-}
-
-h1 span{
+  background:transparent;
+  border:1px solid var(--gold);
   color:var(--gold);
+  padding:8px 12px;
+  cursor:pointer;
 }
 
-footer{
-  border-top:2px solid var(--gold);
-  padding:20px;
-  text-align:center;
+.card{
+  border:1px solid var(--gold);
+  padding:10px;
+  margin:10px;
+  border-radius:8px;
 }
