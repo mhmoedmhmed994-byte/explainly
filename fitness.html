@@ -1,31 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Fitness | PulseAI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness – PulseAI</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="dark">
-<header class="navbar">
-  <div class="logo">PulseAI</div>
-  <nav>
-    <a href="index.html" id="navHome"></a>
-    <a href="symptoms.html" id="navSymptoms"></a>
-    <a href="nutrition.html" id="navNutrition"></a>
-    <a href="fitness.html" id="navFitness"></a>
-  </nav>
+<header>
+  <a href="index.html">PulseAI</a>
 </header>
 
-<main class="content">
-  <h1 id="fitTitle"></h1>
-  <textarea id="userInput" placeholder="Your fitness goal..."></textarea>
-  <button onclick="analyze()">Create Plan</button>
-  <div id="result"></div>
-</main>
+<section>
+  <h1>خطة التمارين</h1>
+  <select>
+    <option>مبتدئ</option>
+    <option>متوسط</option>
+    <option>محترف</option>
+  </select>
+  <br><br>
+  <button>إنشاء التمرين</button>
+</section>
 
-<script src="firebase-config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
