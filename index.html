@@ -1,46 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>PulseAI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>PulseAI</title>
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="dark">
-
-<!-- ====== NAVBAR ====== -->
-<header class="navbar">
-  <div class="logo">PulseAI</div>
-
+<header>
+  <strong>PulseAI</strong>
   <nav>
-    <a id="navHome"></a>
-    <a id="navSymptoms"></a>
-    <a id="navNutrition"></a>
-    <a id="navFitness"></a>
+    <a href="index.html" data-key="home">الرئيسية</a>
+    <a href="symptoms.html" data-key="symptoms">الأعراض</a>
+    <a href="nutrition.html" data-key="nutrition">التغذية</a>
+    <a href="fitness.html" data-key="fitness">اللياقة</a>
   </nav>
-
-  <div class="controls">
-    <select id="languageSelect">
-      <option value="en">EN</option>
-      <option value="ar">AR</option>
-      <option value="zh">中文</option>
-    </select>
-
-    <button id="themeToggle">🌙</button>
+  <div>
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('zh')">中</button>
+    <button onclick="toggleDark()">🌙</button>
   </div>
 </header>
 
-<!-- ====== CONTENT ====== -->
-<main class="content">
-  <h1 id="title"></h1>
-  <p id="description"></p>
-</main>
+<section>
+  <h1><span>PulseAI</span></h1>
+  <h2 data-key="title">PulseAI – مساعد الصحة الذكي</h2>
+  <p data-key="desc">منصة تحليل صحي بالذكاء الاصطناعي</p>
+</section>
 
-<!-- ====== CONTACT ====== -->
-<footer class="contact">
-  <a href="mailto:mb2453504@gmail.com">📧 Email</a>
-  <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
+<footer>
+  <p data-key="contact">تواصل معنا</p>
+  📧 mb2453504@gmail.com  
+  💬 01223547704
 </footer>
 
 <script src="script.js"></script>
