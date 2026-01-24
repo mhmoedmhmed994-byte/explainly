@@ -1,12 +1,17 @@
-const texts = {
+/* 🌙 الوضع */
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+
+/* 🌍 اللغات */
+const translations = {
   ar:{
     home:"الرئيسية",
     symptoms:"الأعراض",
     nutrition:"التغذية",
     fitness:"اللياقة",
     title:"PulseAI – مساعد الصحة الذكي",
-    desc:"منصة تحليل صحي بالذكاء الاصطناعي",
-    contact:"تواصل معنا"
+    sub:"منصة تحليل صحي بالذكاء الاصطناعي"
   },
   en:{
     home:"Home",
@@ -14,26 +19,49 @@ const texts = {
     nutrition:"Nutrition",
     fitness:"Fitness",
     title:"PulseAI – Smart Health Assistant",
-    desc:"AI-powered health analysis platform",
-    contact:"Contact Us"
-  },
-  zh:{
-    home:"主页",
-    symptoms:"症状",
-    nutrition:"营养",
-    fitness:"健身",
-    title:"PulseAI – 智能健康助手",
-    desc:"人工智能健康分析平台",
-    contact:"联系我们"
+    sub:"AI-powered health analysis platform"
   }
 };
 
 function setLang(lang){
+  localStorage.setItem("lang",lang);
   document.querySelectorAll("[data-key]").forEach(el=>{
-    el.innerText = texts[lang][el.dataset.key];
+    el.innerText = translations[lang][el.dataset.key];
   });
 }
 
-function toggleDark(){
-  document.body.classList.toggle("dark");
+window.onload = ()=>{
+  setLang(localStorage.getItem("lang") || "ar");
+  loadFavorites();
+};
+
+/* ⭐ المفضلة */
+function addToFavorites(title,content){
+  let favs = JSON.parse(localStorage.getItem("favorites")) || [];
+  favs.push({title,content,date:new Date().toLocaleString()});
+  localStorage.setItem("favorites",JSON.stringify(favs));
+  alert("تم الحفظ ⭐");
+}
+
+function loadFavorites(){
+  let box = document.getElementById("favBox");
+  if(!box) return;
+  let favs = JSON.parse(localStorage.getItem("favorites")) || [];
+  box.innerHTML="";
+  favs.forEach((f,i)=>{
+    box.innerHTML+=`
+      <div class="card">
+        <h3>${f.title}</h3>
+        <p>${f.content}</p>
+        <small>${f.date}</small><br>
+        <button onclick="removeFav(${i})">❌ حذف</button>
+      </div>`;
+  });
+}
+
+function removeFav(i){
+  let favs = JSON.parse(localStorage.getItem("favorites"));
+  favs.splice(i,1);
+  localStorage.setItem("favorites",JSON.stringify(favs));
+  loadFavorites();
 }
