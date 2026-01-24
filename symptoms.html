@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Symptoms | PulseAI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symptoms – PulseAI</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="dark">
-<header class="navbar">
-  <div class="logo">PulseAI</div>
-  <nav>
-    <a href="index.html" id="navHome"></a>
-    <a href="symptoms.html" id="navSymptoms"></a>
-    <a href="nutrition.html" id="navNutrition"></a>
-    <a href="fitness.html" id="navFitness"></a>
-  </nav>
+<header>
+  <a href="index.html">PulseAI</a>
 </header>
 
-<main class="content">
-  <h1 id="symTitle"></h1>
-  <textarea id="userInput" placeholder="Write symptoms..."></textarea>
-  <button onclick="analyze()">Analyze</button>
-  <div id="result"></div>
-</main>
+<section>
+  <h1>تحليل الأعراض</h1>
+  <textarea placeholder="اكتب الأعراض هنا..." rows="6" style="width:80%"></textarea>
+  <br><br>
+  <button>تحليل</button>
+</section>
 
-<script src="firebase-config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
