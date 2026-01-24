@@ -8,16 +8,14 @@
 </head>
 
 <body class="dark">
-
-<!-- ====== NAVBAR ====== -->
 <header class="navbar">
   <div class="logo">PulseAI</div>
 
   <nav>
-    <a id="navHome"></a>
-    <a id="navSymptoms"></a>
-    <a id="navNutrition"></a>
-    <a id="navFitness"></a>
+    <a href="index.html" id="navHome"></a>
+    <a href="symptoms.html" id="navSymptoms"></a>
+    <a href="nutrition.html" id="navNutrition"></a>
+    <a href="fitness.html" id="navFitness"></a>
   </nav>
 
   <div class="controls">
@@ -26,23 +24,22 @@
       <option value="ar">AR</option>
       <option value="zh">中文</option>
     </select>
-
     <button id="themeToggle">🌙</button>
+    <button id="loginBtn">Login</button>
   </div>
 </header>
 
-<!-- ====== CONTENT ====== -->
 <main class="content">
   <h1 id="title"></h1>
   <p id="description"></p>
 </main>
 
-<!-- ====== CONTACT ====== -->
 <footer class="contact">
   <a href="mailto:mb2453504@gmail.com">📧 Email</a>
   <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
 </footer>
 
+<script src="firebase-config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
