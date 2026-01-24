@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HealthAI Hub</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>PulseAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="bg"></div>
 
-<header class="topbar">
-  <div class="logo">HealthAI</div>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="symptoms.html">Symptoms</a>
-    <a href="nutrition.html">Nutrition</a>
-    <a href="fitness.html">Fitness</a>
-    <a href="favorites.html">Favorites</a>
+<body class="dark">
+
+<!-- ====== NAVBAR ====== -->
+<header class="navbar">
+  <div class="logo">PulseAI</div>
+
+  <nav>
+    <a id="navHome"></a>
+    <a id="navSymptoms"></a>
+    <a id="navNutrition"></a>
+    <a id="navFitness"></a>
   </nav>
-  <div class="actions">
-    <button id="themeBtn">🌙</button>
-    <button id="loginBtn">Login</button>
-    <select id="langSelect">
+
+  <div class="controls">
+    <select id="languageSelect">
       <option value="en">EN</option>
       <option value="ar">AR</option>
       <option value="zh">中文</option>
     </select>
+
+    <button id="themeToggle">🌙</button>
   </div>
 </header>
 
-<main class="main">
-  <h1 data-i18n="home_title">HealthAI Hub</h1>
-  <p data-i18n="home_desc">Analyze symptoms, nutrition, and fitness in one place.</p>
-
-  <div class="cards">
-    <a class="card" href="symptoms.html" data-i18n="home_symptoms">Symptoms Analysis</a>
-    <a class="card" href="nutrition.html" data-i18n="home_nutrition">Nutrition Plan</a>
-    <a class="card" href="fitness.html" data-i18n="home_fitness">Fitness Plan</a>
-  </div>
-
-  <div class="contact">
-    <a href="mailto:example@gmail.com"><img src="icons/email.png" alt="Email"></a>
-    <a href="https://wa.me/0123456789"><img src="icons/whatsapp.png" alt="WhatsApp"></a>
-    <a href="https://linkedin.com/in/example"><img src="icons/linkedin.png" alt="LinkedIn"></a>
-  </div>
+<!-- ====== CONTENT ====== -->
+<main class="content">
+  <h1 id="title"></h1>
+  <p id="description"></p>
 </main>
 
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+<!-- ====== CONTACT ====== -->
+<footer class="contact">
+  <a href="mailto:mb2453504@gmail.com">📧 Email</a>
+  <a href="https://wa.me/201223547704" target="_blank">💬 WhatsApp</a>
+</footer>
 
-<script src="firebase-config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
