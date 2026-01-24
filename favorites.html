@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Favorites</title>
+<title>Favorites – PulseAI</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg"></div>
 
-<header class="topbar">
-  <div class="logo">HealthAI</div>
-  <nav class="nav">
-    <a href="index.html" data-i18n="nav_home">Home</a>
-    <a href="symptoms.html" data-i18n="nav_symptoms">Symptoms</a>
-    <a href="nutrition.html" data-i18n="nav_nutrition">Nutrition</a>
-    <a href="fitness.html" data-i18n="nav_fitness">Fitness</a>
-    <a href="favorites.html" data-i18n="nav_favorites">Favorites</a>
+<header>
+  <strong>PulseAI</strong>
+
+  <nav>
+    <a href="index.html" data-key="home">الرئيسية</a>
+    <a href="symptoms.html" data-key="symptoms">الأعراض</a>
+    <a href="nutrition.html" data-key="nutrition">التغذية</a>
+    <a href="fitness.html" data-key="fitness">اللياقة</a>
+    <a href="favorites.html">⭐ المفضلة</a>
   </nav>
-  <div class="actions">
-    <button id="themeBtn">🌙</button>
-    <button id="loginBtn">Login</button>
-    <select id="langSelect">
-      <option value="en">EN</option>
-      <option value="ar">AR</option>
-      <option value="zh">中文</option>
-    </select>
+
+  <div>
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('zh')">中</button>
+    <button onclick="toggleDark()">🌙</button>
   </div>
 </header>
 
-<main class="main">
-  <h1 data-i18n="favorites_title">Favorites</h1>
-  <div id="favoritesList"></div>
-</main>
+<section>
+  <h1><span>⭐</span> المفضلة</h1>
+  <p>هنا هتلاقي كل الحاجات اللي حفظتها</p>
 
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <div style="margin-top:40px">
 
-<script src="firebase-config.js"></script>
+    <div style="border:1px solid var(--gold); padding:20px; margin:15px;">
+      🩺 <strong>تحليل أعراض محفوظ</strong>
+      <p>صداع – إرهاق – قلة نوم</p>
+      <button>عرض</button>
+    </div>
+
+    <div style="border:1px solid var(--gold); padding:20px; margin:15px;">
+      🥗 <strong>خطة تغذية</strong>
+      <p>نظام صحي – فقدان وزن</p>
+      <button>عرض</button>
+    </div>
+
+    <div style="border:1px solid var(--gold); padding:20px; margin:15px;">
+      🏃 <strong>تمرين يومي</strong>
+      <p>مبتدئ – 20 دقيقة</p>
+      <button>عرض</button>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p data-key="contact">تواصل معنا</p>
+  📧 Email &nbsp; 💬 WhatsApp
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
