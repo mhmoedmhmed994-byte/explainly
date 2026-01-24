@@ -1,40 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PulseAI</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">PulseAI</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="symptoms.html">Symptoms</a>
-      <a href="nutrition.html">Nutrition</a>
-      <a href="fitness.html">Fitness</a>
-      <a href="favorites.html">Favorites</a>
-    </nav>
-    <div class="lang">
-      <button id="langBtn">AR</button>
-      <button id="themeBtn">🌙</button>
-    </div>
-  </header>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="logo">PulseAI</div>
 
-  <main>
-    <section class="hero">
-      <h1>PulseAI – مساعد الصحة الذكي</h1>
-      <p>تحليل أعراض + خطة تغذية + خطة لياقة</p>
-    </section>
-  </main>
+      <nav class="nav">
+        <a href="#symptoms" data-i18n="nav_symptoms">الأعراض</a>
+        <a href="#nutrition" data-i18n="nav_nutrition">التغذية</a>
+        <a href="#fitness" data-i18n="nav_fitness">اللياقة</a>
+        <a href="#favorites" data-i18n="nav_favorites">المفضلة</a>
+      </nav>
 
-  <footer>
-    <div class="contact">
-      <a href="mailto:mb2453504@gmail.com">Email</a>
-      <a href="https://wa.me/201223547704">WhatsApp</a>
-    </div>
-  </footer>
+      <div class="actions">
+        <button id="langBtn">AR</button>
+        <button id="themeBtn">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h1 data-i18n="hero_title">PulseAI – مساعد الصحة الذكي</h1>
+          <p data-i18n="hero_sub">تحليل أعراض + خطة تغذية + خطة لياقة في مكان واحد</p>
+          <div class="contact">
+            <a href="mailto:mb2453504@gmail.com">Email</a>
+            <a href="https://wa.me/201223547704">WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Symptoms -->
+      <section id="symptoms" class="section">
+        <h2 data-i18n="sym_title">تحليل الأعراض</h2>
+        <input id="symInput" placeholder="اكتب أعراضك هنا...">
+        <button onclick="analyzeSymptoms()">تحليل</button>
+        <button onclick="addToFavorites('تحليل أعراض', 'تم حفظ تحليل الأعراض')">⭐ حفظ</button>
+        <div id="symResult" class="result"></div>
+      </section>
+
+      <!-- Nutrition -->
+      <section id="nutrition" class="section">
+        <h2 data-i18n="nut_title">تحليل التغذية</h2>
+        <input id="nutInput" placeholder="اكتب نظامك الغذائي...">
+        <button onclick="analyzeNutrition()">تحليل</button>
+        <button onclick="addToFavorites('تحليل تغذية', 'تم حفظ تحليل التغذية')">⭐ حفظ</button>
+        <div id="nutResult" class="result"></div>
+      </section>
+
+      <!-- Fitness -->
+      <section id="fitness" class="section">
+        <h2 data-i18n="fit_title">تحليل اللياقة</h2>
+        <input id="fitInput" placeholder="اكتب مستوى لياقتك...">
+        <button onclick="analyzeFitness()">تحليل</button>
+        <button onclick="addToFavorites('تحليل لياقة', 'تم حفظ تحليل اللياقة')">⭐ حفظ</button>
+        <div id="fitResult" class="result"></div>
+      </section>
+
+      <!-- Favorites -->
+      <section id="favorites" class="section">
+        <h2 data-i18n="fav_title">المفضلة</h2>
+        <div id="favBox"></div>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
