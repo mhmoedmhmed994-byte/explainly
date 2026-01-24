@@ -1,55 +1,39 @@
 const texts = {
-  en:{
-    home:"Home",sym:"Symptoms",nut:"Nutrition",fit:"Fitness",
-    title:"PulseAI – Smart Health Assistant",
-    desc:"AI health analysis platform",
-    symTitle:"Symptoms Analysis",
-    nutTitle:"Nutrition Plan",
-    fitTitle:"Fitness Plan"
-  },
   ar:{
-    home:"الرئيسية",sym:"الأعراض",nut:"التغذية",fit:"اللياقة",
+    home:"الرئيسية",
+    symptoms:"الأعراض",
+    nutrition:"التغذية",
+    fitness:"اللياقة",
     title:"PulseAI – مساعد الصحة الذكي",
     desc:"منصة تحليل صحي بالذكاء الاصطناعي",
-    symTitle:"تحليل الأعراض",
-    nutTitle:"خطة التغذية",
-    fitTitle:"خطة اللياقة"
+    contact:"تواصل معنا"
+  },
+  en:{
+    home:"Home",
+    symptoms:"Symptoms",
+    nutrition:"Nutrition",
+    fitness:"Fitness",
+    title:"PulseAI – Smart Health Assistant",
+    desc:"AI-powered health analysis platform",
+    contact:"Contact Us"
   },
   zh:{
-    home:"主页",sym:"症状",nut:"营养",fit:"健身",
+    home:"主页",
+    symptoms:"症状",
+    nutrition:"营养",
+    fitness:"健身",
     title:"PulseAI – 智能健康助手",
     desc:"人工智能健康分析平台",
-    symTitle:"症状分析",
-    nutTitle:"营养计划",
-    fitTitle:"健身计划"
+    contact:"联系我们"
   }
 };
 
-function applyLang(l){
-  if(document.getElementById("navHome")){
-    navHome.innerText=texts[l].home;
-    navSymptoms.innerText=texts[l].sym;
-    navNutrition.innerText=texts[l].nut;
-    navFitness.innerText=texts[l].fit;
-  }
-  if(title) title.innerText=texts[l].title;
-  if(description) description.innerText=texts[l].desc;
-  if(symTitle) symTitle.innerText=texts[l].symTitle;
-  if(nutTitle) nutTitle.innerText=texts[l].nutTitle;
-  if(fitTitle) fitTitle.innerText=texts[l].fitTitle;
+function setLang(lang){
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    el.innerText = texts[lang][el.dataset.key];
+  });
 }
 
-if(languageSelect){
-  languageSelect.onchange=e=>applyLang(e.target.value);
-  applyLang("en");
-}
-
-function analyze(){
-  document.getElementById("result").innerText =
-  "AI Result will appear here (connected later)";
-}
-
-themeToggle.onclick=()=>{
-  document.body.classList.toggle("light");
+function toggleDark(){
   document.body.classList.toggle("dark");
-};
+}
