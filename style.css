@@ -1,0 +1,138 @@
+:root {
+  --bg: #070707;
+  --card: #0f0f0f;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --shadow: rgba(212, 175, 55, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.lang button {
+  margin-left: 10px;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  color: var(--white);
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+}
+
+.card {
+  background: linear-gradient(145deg, #0f0f0f, #0a0a0a);
+  border: 1px solid var(--gold);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+.title {
+  font-size: 28px;
+  margin: 0;
+  color: var(--gold);
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #cfcfcf;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form select,
+.form textarea,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 16px;
+  border: 1px solid var(--gold);
+  background: #0b0b0b;
+  color: var(--white);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(145deg, #d4af37, #b58e1b);
+  color: #0a0a0a;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 20px 40px var(--shadow);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn.small {
+  width: auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid var(--gold);
+  background: #0b0b0b;
+}
+
+.hidden {
+  display: none;
+}
+
+.contact {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.contact-btn {
+  width: 48%;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--gold);
+  background: #0b0b0b;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 10px 20px var(--shadow);
+}
