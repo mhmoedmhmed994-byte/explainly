@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التحليل الصحي - PulseAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="logo">PulseAI</div>
+    <a class="btn small" href="index.html">العودة</a>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1 class="title">التحليل الصحي</h1>
+      <p class="subtitle">اكتب الأعراض أو الحالة الصحية</p>
+
+      <textarea id="input" placeholder="اكتب هنا..."></textarea>
+      <button class="btn" onclick="analyze()">تحليل الصحة</button>
+
+      <div id="result" class="result hidden">
+        <h2>النتيجة</h2>
+        <p id="analysis"></p>
+      </div>
+
+      <div class="contact">
+        <a class="contact-btn" href="https://wa.me/201223547704" target="_blank">واتساب</a>
+        <a class="contact-btn" href="mailto:mb2453504@gmail.com">إيميل</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function analyze() {
+      const input = document.getElementById("input").value;
+      const analysis = document.getElementById("analysis");
+      const result = document.getElementById("result");
+
+      if (!input.trim()) {
+        alert("اكتب الحالة أولًا");
+        return;
+      }
+
+      analysis.innerText = "تحليل صحي مبدئي: يُفضل مراجعة طبيب للتأكد، وتجنب أي علاج بدون استشارة.";
+      result.classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
